@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import Header from './Header';
+import React, { useState, useEffect } from "react";
+import Header from "./Header";
+import "./App.css";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -8,14 +9,16 @@ function App() {
     fetchPosts();
   }, []);
 
-  const fetchPosts =async (threadId) => {
-    try{
-      const res =await fetch(`https://railway.bulletinboard.techtrain.dev/threads`)
-      const resjason = await res.json()
-      console.log(resjason)
-      setPosts(resjason)
-    }catch(e){
-      console.error(e)
+  const fetchPosts = async (threadId) => {
+    try {
+      const res = await fetch(
+        `https://railway.bulletinboard.techtrain.dev/threads`
+      );
+      const resjason = await res.json();
+      console.log(resjason);
+      setPosts(resjason);
+    } catch (e) {
+      console.error(e);
     }
     // fetch(`https://railway.bulletinboard.techtrain.dev/threads`)
     //   .then(response => {
@@ -38,14 +41,12 @@ function App() {
   return (
     <>
       <div>
-        <Header/>
-        <ul>
-          {posts.map(post => (
-            <li key={post.id}>
-              <strong>{post.id}</strong>: {post.title}
-            </li>
+        <Header />
+        <body>
+          {posts.map((post) => (
+            <p key={post.id}>{post.title}</p>
           ))}
-        </ul>
+        </body>
       </div>
     </>
   );
