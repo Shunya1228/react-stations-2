@@ -10,16 +10,13 @@ const NewThread = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch(
-        `https://railway.bulletinboard.techtrain.dev/threads`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ title, content }),
-        }
-      );
+      const res = await fetch(`https://railway.bulletinboard.techtrain.dev/threads`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title, content }),
+      });
 
       if (res.ok) {
         navigate("/"); // 新しいスレッドが作成されたらホームページにリダイレクト

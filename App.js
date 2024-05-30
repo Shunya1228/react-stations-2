@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
-import { BrowserRouter as Router, Route, Switch, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NewThread from "./NewThread";
+import ThreadDetails from "./ThreadDetails";
 import "./App.css";
 
 function App() {
@@ -48,9 +49,6 @@ function App() {
     <Router>
       <div>
         <Header />
-        <nav>
-          <Link to="/">Home</Link>
-        </nav>
         <Routes>
           <Route
             path="/"
@@ -64,7 +62,8 @@ function App() {
               </main>
             }
           />
-          <Route path="/new-thread" element={<NewThread />} />
+          <Route path="/threads/new" element={<NewThread />} />
+          <Route path="/threads/:thread_id" element={<ThreadDetails />} />
         </Routes>
       </div>
     </Router>

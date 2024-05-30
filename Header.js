@@ -6,7 +6,7 @@ export const Header = () => {
     <header>
       <h1>掲示板</h1>
       <nav>
-      <Link to="/">Home</Link> |<Link to="/new-thread">スレッドを立てる</Link>
+      <Link to="/">Home</Link> |<Link to="/threads/new">スレッドを立てる</Link>
       </nav>
     </header>
   );
