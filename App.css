@@ -1,0 +1,15 @@
+.header {
+  background-color:#00ff7f ;
+  height: 60px;
+}
+
+header {
+  font-size: 25px;
+  font-weight: bold;
+  background-color:#00ff7f ;
+}
+
+.thread {
+  border: 2px solid #aaa;
+  padding: 2em;
+}
