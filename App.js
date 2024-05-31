@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes , Link} from "react-router-dom";
 import NewThread from "./NewThread";
 import ThreadDetails from "./ThreadDetails";
 import "./App.css";
@@ -56,7 +56,7 @@ function App() {
               <main>
                 {posts.map((post) => (
                   <p className="thread" key={post.id}>
-                    {post.title}
+                    <Link to={`/threads/${post.id}`}>{post.title}</Link>
                   </p>
                 ))}
               </main>
