@@ -40,8 +40,7 @@ const ThreadDetails = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            title: newPostTitle,
-            content: newPostContent,
+            post: newPostContent,
           }),
         }
       );
@@ -76,8 +75,7 @@ const ThreadDetails = () => {
       ) : (
         posts.map((post) => (
           <div key={post.id} className="post">
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
+            <p>{post.post}</p>
           </div>
         ))
       )}
